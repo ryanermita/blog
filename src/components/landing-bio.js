@@ -26,6 +26,31 @@ const NameHeader = styled.h1`
   margin-bottom: 0;
 `
 
+const Content = styled.div`
+  text-align: left;
+`
+
+const UploanPHLink = styled.a`
+`
+
+const MozillaPHLink = styled.a`
+`
+
+const MozillaLink = styled.a`
+`
+
+const PythonPHLink = styled.a`
+`
+
+const TwitterLink = styled.a`
+`
+
+const LinkedinLink = styled.a`
+`
+
+const GithubLink = styled.a`
+`
+
 const LandingBio = () => (
   <StaticQuery
     query={graphql`
@@ -43,6 +68,25 @@ const LandingBio = () => (
         <Container>
           <NameHeader>{data.site.siteMetadata.title}</NameHeader>
           <Description>{data.site.siteMetadata.subtitle}</Description>
+          <Content>
+            <p>
+              Hi! I'm Ryan. I find joy in engineering softwares; the excitement, frustrations, and its complexity.
+              I currently work at <UploanPHLink href="https://uploan.ph/">Uploan Philippines</UploanPHLink> as a Senior Software Engineer.
+              Here, I'll share my learnings and thoughts in regards of software engineering.
+            </p>
+
+            <p>
+              In my free time, I do volunteer work. Before I was one of the <MozillaPHLink href="https://reps.mozilla.org/">Mozilla Representatives in the Philippines</MozillaPHLink>,
+              where I focused on the web literacy initiatives of <MozillaLink href="https://foundation.mozilla.org/en/">Mozilla</MozillaLink>;
+              I facilitate workshops, organize events, and do tech talks in universities and other tech community events.
+              Currently I'm volunteering at <PythonPHLink href="https://python.ph/">Python Philippines</PythonPHLink>, where I focused on Python training initiatives.
+            </p>
+
+            <p>
+              You can also find me on these platforms: <TwitterLink href="https://twitter.com/ryanermita">Twitter</TwitterLink>, <LinkedinLink href="https://ph.linkedin.com/in/ryanermita">Linkedin</LinkedinLink>,
+              and <GithubLink href="https://github.com/ryanermita">Github</GithubLink>
+            </p>
+          </Content>
         </Container>
       </OuterContainer>
     )}

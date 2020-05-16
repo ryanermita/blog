@@ -12,39 +12,34 @@ const Content = styled.div`
   padding: 1.45rem 1.0875rem;
 `
 
-const ArticleDate = styled.h5`
+const ArticleDate = styled.h4`
+  display: inline;
+  color: #606060;
+
+  ::after {
+    content: "-";
+    margin: 0 12px;
+  }
+`
+
+const ArticleTitle = styled.h4`
   display: inline;
   color: #606060;
 `
 
-const MarkerHeader = styled.h3`
-  display: inline;
-  border-radius: 1em 0 1em 0;
-  background-image: linear-gradient(
-    -100deg,
-    rgba(255, 250, 150, 0.15),
-    rgba(255, 250, 150, 0.8) 100%,
-    rgba(255, 250, 150, 0.25)
-  );
-`
-
-const ReadingTime = styled.h5`
-  display: inline;
-  color: #606060;
+const Article = styled.div`
+  padding: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
 `
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Software Engineering Journal" />
       <Content>
-        <h1>Blog</h1>
+        <h1>Software Engineering Journal</h1>
         {data.allMarkdownRemark.edges
-          .filter(({ node }) => {
-            const rawDate = node.frontmatter.rawDate
-            const date = new Date(rawDate)
-            return date < new Date()
-          })
           .map(({ node }) => (
             <div key={node.id}>
               <Link
@@ -54,12 +49,10 @@ const IndexPage = ({ data }) => {
                   color: inherit;
                 `}
               >
-                <MarkerHeader>{node.frontmatter.title} </MarkerHeader>
-                <div>
-                  <ArticleDate>{node.frontmatter.date}</ArticleDate>
-                  <ReadingTime> - {node.fields.readingTime.text}</ReadingTime>
-                </div>
-                <p>{node.excerpt}</p>
+                <Article>
+                  <ArticleDate>{node.frontmatter.rawDate}</ArticleDate>
+                  <ArticleTitle>{node.frontmatter.title}</ArticleTitle>
+                </Article>
               </Link>
             </div>
           ))}
@@ -72,30 +65,30 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
+          site {
+          siteMetadata {
+          title
+        }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } } }
+      sort: {fields: [frontmatter___date], order: DESC }
+      filter: {frontmatter: {draft: {eq: false } } }
     ) {
-      totalCount
+          totalCount
       edges {
-        node {
+          node {
           id
           frontmatter {
-            title
+          title
             date(formatString: "DD MMMM, YYYY")
             rawDate: date
             path
           }
           fields {
-            slug
+          slug
             readingTime {
-              text
-            }
+          text
+        }
           }
           excerpt
         }
