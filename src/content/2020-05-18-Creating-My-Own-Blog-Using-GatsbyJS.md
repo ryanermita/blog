@@ -1,7 +1,7 @@
 ---
 title: "Creating My Own Blog Using GatsbyJS"
 date: "2020-05-18"
-draft: true
+draft: false
 path: "/software-engineering-journal/creating-my-own-blog-using-gatsbyjs"
 ---
 
