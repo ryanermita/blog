@@ -41,13 +41,14 @@ npm install -g gatsby-cli
 ```
 gatsby new gatsby-starter-julia https://github.com/niklasmtj/gatsby-starter-julia
 ```
+
 Using a [starter plugins](https://www.gatsbyjs.org/starters/?v=2) makes it more convenient to create sites using GatsbyJS. Aside from being very simple and minimal, the starter plugin I use contains these plugins among the others:
 
-- [`gatsby-source-filesystem`](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/) - this makes it possible to retrieve data from filesystem specially for [markdown](https://www.markdownguide.org/) content.
-- [`gatsby-plugin-react-helmet`](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/) - for managing my site header tags, useful for adding metadata to help with [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization).
-- [`gatsby-plugin-offline`](https://www.gatsbyjs.org/packages/gatsby-plugin-offline/) - make my site available offline, [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) for the win!
+  * [`gatsby-source-filesystem`](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/) - this makes it possible to retrieve data from filesystem specially for [markdown](https://www.markdownguide.org/) content.
+  * [`gatsby-plugin-react-helmet`](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/) - for managing my site header tags, useful for adding metadata to help with [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization).
+  * [`gatsby-plugin-offline`](https://www.gatsbyjs.org/packages/gatsby-plugin-offline/) - make my site available offline, [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) for the win!
 
-3. Explore the directories and files to customize some of the UI components. The generated source directory is very organize and easy to follow. The directory structure of the source directory looks like this:
+&nbsp;3. Explore the directories and files to customize some of the UI components. The generated source directory is very organize and easy to follow. The directory structure of the source directory looks like this:
 ```
 src/
   components/
@@ -56,17 +57,18 @@ src/
   pages/
   templates/
 ```
-- `components` consist of reusable components. We are using ReactJS, creating reusable components is the de facto here.
-- `content` consist of the markdown files, each markdown file corresponds to a blog post. 
-- `images`, yes you guess it right. for image files.
-- `pages` consist of javascript files, each javascript file corresponds to a page on the generated site. The pages are automatically accessible via site url with this format: `https://yoursite.com/<page-file-name-without-js-extension>`
-- `templates` consist of resuable templates, like blog post template.
+  * `components` consist of reusable components. We are using ReactJS, creating reusable components is the de facto here.
+   * `content` consist of the markdown files, each markdown file corresponds to a blog post. 
+   * `images`, yes you guess it right. for image files.
+   * `pages` consist of javascript files, each javascript file corresponds to a page on the generated site. The pages are automatically accessible via site url with this format: `https://yoursite.com/<page-file-name-without-js-extension>`
+   * `templates` consist of resuable templates, like blog post template.
 
-4. Creating a content. I'm using markdown files for my blog content. All markdown files resides on `src/content/` directory. Writing markdown content is very simple, you can use this site as markdown syntax reference: [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+&nbsp;4. Creating a content. I'm using markdown files for my blog content. All markdown files resides on `src/content/` directory. Writing markdown content is very simple, you can use this site as markdown syntax reference: [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
 
-    One important thing to remember is to add metadata on your markdown files. These metadata can be included on your markdown files using [`frontmatter`](https://jekyllrb.com/docs/front-matter/), denoted by the triple dashes at the start and end of the block. This metadata is required as it is used by GraphQL for querying our content. We use the queried data for presentational purposes: displaying the blog content or listing the blog posts for example. 
+  One important thing to remember is to add metadata on your markdown files. These metadata can be included on your markdown files using [`frontmatter`](https://jekyllrb.com/docs/front-matter/), denoted by the triple dashes at the start and end of the block. This metadata is required as it is used by GraphQL for querying our content. We use the queried data for presentational purposes: displaying the blog content or listing the blog posts for example. 
 
-    The code below is an example of a markdown content with metadata inside the `frontmatter` code block at the top of the file.
+  The code below is an example of a markdown content with metadata inside the `frontmatter` code block at the top of the file.
+
 ```
 ---
 title: "Creating My Own Blog Using GatsbyJS"
@@ -91,6 +93,7 @@ yarn add gh-pages --save-dev
 ```
 
 include the deploy script on `package.json` so we dont need to type a long command just to deploy our blog. 
+
 ```
   "scripts": {
     ...
@@ -100,7 +103,7 @@ include the deploy script on `package.json` so we dont need to type a long comma
 
 Run `yarn run deploy` and that's it. Given that our repo is properly configured. We can view our site on this url: `<username>.github.io`
 
-Configuring github pages to use a custom domain deserves its on post. To be posted soon!
+Configuring github pages to use a custom domain deserves its own post. To be posted soon!
 
 
 *Happy coding!*
