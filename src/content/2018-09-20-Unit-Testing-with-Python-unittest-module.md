@@ -54,6 +54,7 @@ class FooTestCase(unittest.TestCase):
         self.assertEqual(-3, sum)
 ```
 
+&nbsp;
 ### To write a test script using python unittest module:
 
 - Create an empty python file with the filename prefixed by `test_` . This way we can easily distinguish that a file is a test script.
@@ -151,6 +152,7 @@ test_add_negative_numbers (test_foo.TestFoo) ... skipped 'skipping test because 
 Ran 2 tests in 0.000sOK (skipped=1)
 ```
 
+&nbsp;
 ### Test setup and cleanup
 Most of the time we need to run a code before and after a test method. For example, before running our test method we need to setup the database connection, initialize our classes, prepare our test data, etc. Also after we run our test method, we need to close our database connection and clear any traces of our tests. These actions are called **test fixtures**.
 
@@ -210,6 +212,7 @@ Ran 2 tests in 0.000s
 OK
 ```
 
+&nbsp;
 ### Mocking with unittest module
 
 There are times that the function/module which is the subject of our unit test has some dependencies that we don't have any control of, e.g external APIs or services, python standard modules, or other modules that we wrote inside our project. These dependencies might cause undesirable side effects during our test and might hinder the test itself. Good thing we can mock these dependencies and focus only on the code that we need to test.
