@@ -24,8 +24,9 @@ RabbitMQ is a message broker that originally implements the [Advance Message Que
 - Open and Standard — aside from following the open standards of AMQP, [RabbitMQ is open source](https://github.com/rabbitmq) and anyone can contribute to make it better.
 
 ## RabbitMQ Architecture
+First, lets see how we implement Redis as a message broker, it follows this process:
 
-![alt text](../images/redis-implementation.png "Redis Implimentation")
+![Redis Implimentation](../images/redis-implementation.png)
 
 1. An application publish a message to the message broker, which is in this case, Redis. The message was directly pushed to the queue.
 2. The message is stored in a queue waiting to be consumed by a consumer from the same or different application.
@@ -41,7 +42,7 @@ This process is very simple and straightforward but, it is fragile, not flexible
 
 Those cases above can be easily solved by RabbitMQ and its not that hard to implement. But first, lets see how RabbitMQ message broker works:
 
-![alt text](../images/rabbitmq-implementation.png "RabbitMQ Implimentation")
+![RabbitMQ Implimentation](../images/rabbitmq-implementation.png)
 
 1 .The application publish a message to the message broker, in this case, RabbitMQ. The message was pushed to an Exchange instead of a queue.
 2. The Exchange will route the message to the queue or queues that is bound to the Exchange.
